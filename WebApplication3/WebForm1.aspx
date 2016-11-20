@@ -35,7 +35,7 @@
             <p style="margin-left:150px;">Рис. 1.</p>
             <p>Також проект буде містити логування(для чого ще не придумав). Якщо користувач, який ввійшов - адміністратор, він буде мати можливість розглянути різного роду статистику.</p>
         </div>
-        <h2>Creating Your First Google Map Demo:</h2>
+       <h2>Creating Your First Google Map Demo:</h2>
         <div id ="map"   style="width: 304px; top: 68px; left: 172px; position: absolute; height: 238px">
         
         </div>
@@ -45,8 +45,8 @@
             var latlng = new google.maps.LatLng(-34.397, 150.644);
             var options =
             {
-                zoom: 3,
-                center: new google.maps.LatLng(37.09, -95.71),
+                zoom: 15,
+                center: new google.maps.LatLng(50.6083811, 26.2580379),
                 mapTypeId: google.maps.MapTypeId.ROADMAP,
                 mapTypeControl: true,
                 mapTypeControlOptions:
@@ -73,6 +73,8 @@
         }
         window.onload = initialize;
     </script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAkJd__q_5JakBegC_jiaiTa9gZ0QfM8O0&callback=initMap"
+  type="text/javascript"></script>
     <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
     <script src="scripts/bootstrap.js"></script>
 </body>
