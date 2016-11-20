@@ -30,7 +30,10 @@
         <div class="container">
             <h1>Мої вітання</h1>
             <div class="col-lg-8">
-                <asp:Table ID="table" runat="server"></asp:Table>
+                <div class="panel">
+                    <asp:Table ID="table" runat="server" class="table table-striped">
+                    </asp:Table>
+                </div>
             </div>
             <h2>Creating Your First Google Map Demo:</h2>
             <div id="map" class="col-lg-4" style="height:400px;">
