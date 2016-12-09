@@ -7,6 +7,7 @@ using System.Web.UI.WebControls;
 using WebApplication3.Helpers;
 using WebProject.Entyties;
 using System.Json;
+using Newtonsoft.Json;
 using System.Web.Script.Serialization;
 using System.Web.Services;
 
@@ -20,7 +21,6 @@ namespace WebApplication3
             UserContext db = new UserContext();
             var BusStations = db.BusStations.ToList();
             JavaScriptSerializer TheSerializer = new JavaScriptSerializer();
-            //TheSerializer.RegisterConverters(new JavaScriptConverter[] { new MyCustomJson() });
             var TheJson = TheSerializer.Serialize(BusStations);
             return TheJson;
         }
