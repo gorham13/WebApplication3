@@ -28,16 +28,14 @@
             </div>
         </div><br /><br />
         <div class="container">
-            <h1>Мої вітання</h1>
             <div class="col-lg-8">
                 <div class="panel">
-                    <asp:Table ID="table" runat="server" class="table table-striped">
-                    </asp:Table>
+                    <asp:Table ID="table1" runat="server" class="table table-striped"></asp:Table>
+                    <asp:Table ID="table" runat="server" class="table table-striped"></asp:Table>
                 </div>
             </div>
-            <h2>Creating Your First Google Map Demo:</h2>
+            <h2 style="align-content:center"> Мапа "праворуч":</h2>
             <div id="map" class="col-lg-4" style="height:400px;">
-
             </div>
         </div>
     </form>

@@ -24,7 +24,6 @@
                             title : my_object.Name
                         });
                         marker.setIcon("http://maps.google.com/mapfiles/ms/icons/blue-dot.png");
-
                         google.maps.event.addListener(marker, 'click', function () {
                             if (tmp1 != null)
                                 tmp1.setIcon("http://maps.google.com/mapfiles/ms/icons/blue-dot.png");
@@ -32,16 +31,23 @@
                             marker.setIcon("http://maps.google.com/mapfiles/ms/icons/red-dot.png");
                             $.ajax({
                                 type: "POST",
-                                url: "WebForm1.aspx/GetGeneralTable",
-                                data: marker.title,
-                                contentType: "application/json; charset=utf-8",
+                                url: "/WebForm1.aspx/GetGeneralTable",
                                 dataType: "json",
+                                data: JSON.stringify({'name': marker.title}),
+                                contentType: "application/json; charset=utf-8",
                                 success: function (data) {
-                                    console.log("table" + data);
+                                    
+                                    $('#table').children().each(function(){
+                                        (this).remove();
+                                    });
+
                                     var rows = "";
                                     $.each(data, function (index, obj) {
-                                        console.log("table" + obj);
-                                        rows += "<tr><td>" + obj + "</td></tr>";
+                                        var my_obj = JSON.parse(obj);
+                                        $.each(my_obj, function (index, my_obj1) {
+                                            console.log("table " + my_obj1);
+                                            rows += "<tr><td>" + my_obj1 + "</td></tr>";
+                                        });
                                     });
                                     $(rows).appendTo('#table');
                                 }

@@ -29,8 +29,8 @@ namespace WebApplication3
         [WebMethod]
         public static string GetGeneralTable(string name)
         {
-            JavaScriptSerializer TheDeSerializer = new JavaScriptSerializer();
-            name = TheDeSerializer.Deserialize<string>(name);
+            //JavaScriptSerializer TheDeSerializer = new JavaScriptSerializer();
+            //name = TheDeSerializer.Deserialize<string>(name);
             UserContext db = new UserContext();
             var GeneralTables1 = db.GeneralTables;
             var BusStationID1 = db.BusStations.Where(elem => (elem.Name == name)).FirstOrDefault();
@@ -55,7 +55,7 @@ namespace WebApplication3
                     h1.InnerHtml = "Вітаємо вас на сайті. Оберіть свою зупинку на мапі праворуч.";
                     tCell.Controls.Add(h1);
                     tRow.Cells.Add(tCell);
-                    table.Rows.Add(tRow);
+                    table1.Rows.Add(tRow);
             }
         }
 
